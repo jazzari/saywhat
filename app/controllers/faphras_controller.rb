@@ -5,6 +5,7 @@ class FaphrasController < ApplicationController
   # GET /faphras.json
   def index
     @faphras = Faphra.all.order("created_at DESC")
+    @faphra = Faphra.new
   end
 
   # GET /faphras/1
