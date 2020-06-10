@@ -1,27 +1,10 @@
-<p id="notice"><%= notice %></p>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <%= render 'feed' %>
+      <%= render 'who_to_follow' %>
+    </div>
+  </div>
+</section>
 
-<h1>Faphras</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @faphras.each do |faphra| %>
-      <tr>
-        <td><%= faphra.body %></td>
-        <td><%= link_to 'Show', faphra %></td>
-        <td><%= link_to 'Edit', edit_faphra_path(faphra) %></td>
-        <td><%= link_to 'Destroy', faphra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Faphra', new_faphra_path %>
