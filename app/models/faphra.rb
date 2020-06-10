@@ -1,0 +1,2 @@
+class Faphra < ApplicationRecord
+end
