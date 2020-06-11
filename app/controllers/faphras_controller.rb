@@ -1,5 +1,6 @@
 class FaphrasController < ApplicationController
   before_action :set_faphra, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /faphras
   # GET /faphras.json
@@ -15,7 +16,7 @@ class FaphrasController < ApplicationController
 
   # GET /faphras/new
   def new
-    @faphra = Faphra.new
+    @faphra = current_user.faphras.build
   end
 
   # GET /faphras/1/edit
@@ -25,7 +26,7 @@ class FaphrasController < ApplicationController
   # POST /faphras
   # POST /faphras.json
   def create
-    @faphra = Faphra.new(faphra_params)
+    @faphra = current_user.faphras.build(faphra_params)
 
     respond_to do |format|
       if @faphra.save
