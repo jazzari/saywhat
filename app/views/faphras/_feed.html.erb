@@ -12,7 +12,7 @@
 
 
 
-<% @faphras.each do |faphra| %>
+  <% @faphras.each do |faphra| %>
 	<div class="box">
 		<article class="media">
 			<div class="media-left">
@@ -22,8 +22,8 @@
 			</div>
 			<div class="media-content">
 				<div class="content">
-					<strong>Ariel Brusa</strong><br />
-					<small>@jazzari</small><br />
+					<strong><%= faphra.user.name %></strong><br />
+					<small><%= faphra.user.username %></small><br />
 					<p><%= faphra.body %></p>
 				</div>
 				<nav class="level">
