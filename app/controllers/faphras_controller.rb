@@ -29,7 +29,7 @@ class FaphrasController < ApplicationController
 
     respond_to do |format|
       if @faphra.save
-        format.html { redirect_to @faphra, notice: 'Faphra was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Faphra was successfully created.' }
         format.json { render :show, status: :created, location: @faphra }
       else
         format.html { render :new }
