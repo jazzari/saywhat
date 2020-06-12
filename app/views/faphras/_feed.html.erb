@@ -1,23 +1,25 @@
 <div class="column if-half">
-	<article class="media box">
+	<% if user_signed_in? %>
+	  <article class="media box">
 		<figure class="media-left">
 			<p class="image is-64x64">
-				<img src="https://bulma.io/images/placeholders/64x64.png">
+				<%= gravatar_image_tag(current_user.email, 
+					   size: 64, alt: current_user.name) %>
 			</p>
 		</figure>
 		<div class="media-content">
 			 <%= render 'faphras/form' %>
 		</div>
-	</article>	
-
-
+	  </article>	
+	<% end %>
 
   <% @faphras.each do |faphra| %>
 	<div class="box">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-64x64">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
+					<%= gravatar_image_tag(faphra.user.email, 
+					   size: 64, alt: faphra.user.name) %>
 				</figure>
 			</div>
 			<div class="media-content">
@@ -26,7 +28,9 @@
 					<small><%= faphra.user.username %></small><br />
 					<p><%= faphra.body %></p>
 				</div>
-				<nav class="level">
+
+				<% if user_signed_in? %>
+				  <nav class="level">
 					<div class="level-left is-mobile">
 						<%= link_to faphra, class: "level-item" do %>
 							<span class="icon">
@@ -44,7 +48,9 @@
 							</span>
 						<% end %>
 					</div>
-				</nav>
+				  </nav>
+				<% end %>
+
 			</div>
 		</article>
 	</div>
