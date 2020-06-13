@@ -1,6 +1,22 @@
-<h1>Editing Faphra</h1>
+<div class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<h1 class="title">Editing Faphra</h1>
+				<%= render 'form', faphra: @faphra %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form', faphra: @faphra %>
-
-<%= link_to 'Show', @faphra %> |
-<%= link_to 'Back', faphras_path %>
+<div class="navbar is-fixed-botton">
+	<div class="navbar-menu">
+		<div class="navbar-item">
+			<div class="field is-grouped">
+				<p class="control">
+					<%= link_to "Cancel", faphras_path, class: "button is-dark" %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

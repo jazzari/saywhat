@@ -7,6 +7,7 @@ class FaphrasController < ApplicationController
   def index
     @faphras = Faphra.all.order("created_at DESC")
     @faphra = Faphra.new
+    @users = User.all 
   end
 
   # GET /faphras/1
